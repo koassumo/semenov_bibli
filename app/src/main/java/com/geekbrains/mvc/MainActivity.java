@@ -39,7 +39,20 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
 
     @Override
     public void onClick(View view) {
-        mPresenter.buttonClick(view.getId());
+        int buttonNumber = 0;
+        switch (view.getId()) {
+            case R.id.btnCounter1:
+                    buttonNumber = 1;
+                    break;
+            case R.id.btnCounter2:
+                buttonNumber = 2;
+                break;
+            case R.id.btnCounter3:
+                buttonNumber = 3;
+                break;
+        }
+        int newTextCountValue = mPresenter.buttonClick(buttonNumber);
+        setButtonText(buttonNumber, newTextCountValue);
     }
 
     @Override

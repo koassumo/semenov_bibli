@@ -15,26 +15,22 @@ public class Presenter {
         return currentValue + 1;
     }
 
-    public void buttonClick(int id) {
-        int newModelValue;
+    public int buttonClick(int id) {
+        int newModelValue = 0;
         switch (id) {
-            case R.id.btnCounter1:
+            case 1:
                 newModelValue = calcNewModelValue(0);
                 mModel.setElementValueAtIndex(0, newModelValue);
-                mView.setButtonText(1, newModelValue);
                 break;
-
-            case R.id.btnCounter2:
+            case 2:
                 newModelValue = calcNewModelValue(1);
                 mModel.setElementValueAtIndex(1, newModelValue);
-                mView.setButtonText(2, newModelValue);
                 break;
-
-            case R.id.btnCounter3:
+            case 3:
                 newModelValue = calcNewModelValue(2);
                 mModel.setElementValueAtIndex(2, newModelValue);
-                mView.setButtonText(3, newModelValue);
                 break;
         }
+        return newModelValue;
     }
 }
